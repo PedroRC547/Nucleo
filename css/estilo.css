@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 80px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: #242423;
+    color: white;
+    padding: 10px 50px 10px 50px;
+
+    display: flex;              
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.navbar button{
+    height: 100%;
+    width: auto;
+    padding: 0 20px;
+    margin: 0;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #242423;
+    color: white;
+}
+
+.navbar button.active {
+    background-color: white;
+    color: #242423;
+    border-radius: 50px;
+    height: auto;
+    padding: 5px 20px 5px 20px;
+}
+
