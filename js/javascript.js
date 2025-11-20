@@ -1,9 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
     const gallery = document.querySelector('.image-gallery');
     let galleryItems = document.querySelectorAll('.gallery-item');
-    const dots = document.querySelectorAll('.dot');
+    const bars = document.querySelectorAll('.bar');
     const captionElement = document.querySelector('.carousel-caption');
     const ctaButton = document.querySelector('.cta-button');
+    
+    // Verifica se estamos na página sobreNos (com barras de paginação)
+    if (bars.length > 0) {
+        // Para a página sobreNos, apenas atualiza os indicadores
+        let currentIndex = 0;
+        
+        // Atualiza os indicadores de barras
+        function updateBars(index) {
+            bars.forEach((bar, i) => {
+                if (i === index) {
+                    bar.classList.add('active');
+                } else {
+                    bar.classList.remove('active');
+                }
+            });
+        }
+        
+        // Adiciona evento de clique nas barras
+        bars.forEach((bar, index) => {
+            bar.addEventListener('click', () => {
+                currentIndex = index;
+                updateBars(currentIndex);
+            });
+        });
+        
+        // Inicializa com a primeira barra ativa
+        updateBars(0);
+        return; // Sai da função para não executar o código do carrossel
+    }
+    
+    // Código original do carrossel para outras páginas
+    const dots = document.querySelectorAll('.dot');
     
     // O carrossel real começa no item 1 devido aos clones.
     let currentIndex = 1; 
@@ -95,3 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel(false); 
     updateCaption(0); // Garante que a legenda inicial corresponda ao primeiro item (dotIndex 0)
 });
+
+// Função para mover o carrossel de planos (se necessário no futuro)
+function moveCarousel(direction) {
+    // Esta função pode ser implementada se quiser adicionar funcionalidade de carrossel
+    // Por enquanto, as setas são apenas visuais
+    console.log('Carousel move:', direction);
+}

@@ -23,21 +23,18 @@
 
     <div class="bannerBlack" id="bannerHome">
         <div id="bannerHome-texto">
-            <h2>Planos de <br>saúde e seguros</h2><br>
-            <p>quem <strong>cuidam</strong> do hoje e <strong>protegem</strong> o amanhã</p>
+            <h2>Planos de <strong>saúde e seguros</strong> que <br>cuidam hoje e protegem amanhã.</h2>
             <button class="btnPadraoUm" style="margin-top: 30px;" onclick="window.location.href=''">Fale com um consultor</button>
         </div>
         <div id="bannerHome-imagem">
-            <div class="container-imagem">
-                <img src="Img/Imagem-8.png" alt="moça grávida" class="img-horizontal">
-                <img src="Img/Imagem-7.png" alt="família" class="img-vertical">
-            </div>
-            <div class="container-imagem">
-                <img src="Img/Imagem-9.png" alt="dentista" class="img-vertical">
-                <img src="Img/Imagem-6.png" alt="laboratório" class="img-horizontal">
+            <div class="grid-imagens">
+                <img src="Img/Imagem-8.png" alt="moça grávida" class="grid-img">
+                <img src="Img/Imagem-7.png" alt="família" class="grid-img">
+                <img src="Img/Imagem-9.png" alt="dentista" class="grid-img">
+                <img src="Img/Imagem-6.png" alt="laboratório" class="grid-img">
             </div>
         </div>
-
+        <div class="curved-line"></div>
     </div>
     <div class="bannerMarcas">
         <div class="bannerMarcas-slider">
@@ -87,24 +84,28 @@
     </div>
 
     <div class="bannerPlanosHome">
-        <div class="planoHome">
-            <img src="Img/Coracao_Azul_1.png" alt="Ícone de saúde">
-            <h2>Saúde</h2>
-            <p>Proteção sob medida para pessoas e empresas.</p>
-            <button class="btnPadraoTres" onclick="window.location.href=''">Saiba mais</button>
+        <button class="carousel-arrow carousel-arrow-left" onclick="moveCarousel(-1)">‹</button>
+        <div class="planos-carousel">
+            <div class="planoHome">
+                <img src="Img/Coracao_Azul_1.png" alt="Ícone de saúde">
+                <h2>Saúde</h2>
+                <p>Proteção sob medida para pessoas e empresas.</p>
+                <button class="btnPadraoTres" onclick="window.location.href=''">Saiba mais</button>
+            </div>
+            <div class="planoHome">
+                <img src="Img/Dente_Azul.png" alt="Ícone de saúde">
+                <h2>Odontológico</h2>
+                <p>Cuidado acessível e prático para sua saúde bucal.</p>
+                <button class="btnPadraoTres" onclick="window.location.href=''">Saiba mais</button>
+            </div>
+            <div class="planoHome">
+                <img src="Img/Seguranca_Azul_1.png" alt="Ícone de saúde">
+                <h2>Seguros RE</h2>
+                <p>Soluções especializadas para proteger patrimônios e riscos específicos.</p>
+                <button class="btnPadraoTres" onclick="window.location.href=''">Saiba mais</button>
+            </div>
         </div>
-        <div class="planoHome">
-            <img src="Img/Dente_Azul.png" alt="Ícone de saúde">
-            <h2>Odontológico</h2>
-            <p>Cuidado acessível e prático para sua saúde bucal.</p>
-            <button class="btnPadraoTres"onclick="window.location.href=''">Saiba mais</button>
-        </div>
-        <div class="planoHome">
-            <img src="Img/Seguranca_Azul_1.png" alt="Ícone de saúde">
-            <h2>Seguros RE</h2>
-            <p>Soluções especializadas para proteger patrimônios e riscos específicos.</p>
-            <button class="btnPadraoTres" onclick="window.location.href=''">Saiba mais</button>
-        </div>
+        <button class="carousel-arrow carousel-arrow-right" onclick="moveCarousel(1)">›</button>
     </div>
     <div id="bannerPlanosSaibaMais">
         <div id="bannerPlanosSaibaMais-texto">

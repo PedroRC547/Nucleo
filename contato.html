@@ -14,22 +14,23 @@
             <img  id="nucleo_logo" src="Img/Logo_Nucleo_Preto-1-removebg.png" alt="logoImg">
         </div>
         <div>
-            <button onclick="window.location.href='index.html'" class="active">Home</button>
+            <button onclick="window.location.href='index.html'">Home</button>
             <button onclick="window.location.href='sobreNos.html'">Sobre Nós</button>
             <button onclick="window.location.href='nossasSolucoes.html'">Nossas Soluções</button>
             <button onclick="window.location.href='carreira.html'">Carreira</button>
-            <button onclick="window.location.href='contato.html'">Contato</button>
+            <button onclick="window.location.href='contato.html'" class="active">Contato</button>
         </div>
     </div>
 
     <div>
-        <img style="width: 100%;" src="Img/foto-1.png" alt="Banner Sobre Nós" class="bannerSobreNosImg">
+        <img style="width: 100%;" src="Img/foto-1.png" alt="Banner Contato" class="bannerSobreNosImg">
     </div>
-    <div id="bannerCarreira">
-        <div class="bannerWhiteCarreira">
-            <div class="BannerFaleComANucleo" id="BannerFaleComANucleo-contato">
+    
+    <div id="bannerContato">
+        <div class="contato-container">
+            <div class="contato-info">
                 <h2>
-                    Fale com <br><strong>a Núcleo</strong>
+                    fale com <br><strong>a núcleo</strong>
                 </h2>
                 <ul class="contato">
                     <li><i class="bi bi-envelope-fill"></i>contato@nucleocorretora.com.br</li>
@@ -38,22 +39,21 @@
                     <li><i class="bi bi-instagram"></i>@nucleocorretora</li>
                 </ul>
             </div>
-        </div>
-        <div class="bannerWhiteCarreira">
-            <form class="formCarreira" id="form" action="">
-                <label for="nomeCompleto">Nome</label>
-                <input id="nomeCompleto" type="text" placeholder="Ex João da Silva" required>
-                        
-                <label for="email">Email</label>
-                <input id="email" type="email" placeholder="nome@exemplo.com.br" required>
+            <div class="contato-form-wrapper">
+                <form class="formContato" id="form" action="">
+                    <label for="nomeCompleto">Nome</label>
+                    <input id="nomeCompleto" type="text" placeholder="Ex. João da Silva" required>
+                            
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="nome@exemplo.com.br" required>
 
-                <label for="telefone">Telefone</label>
-                <input id="telefone" type="tel" placeholder="(00) 00000-0000" required>
+                    <label for="telefone">Telefone</label>
+                    <input id="telefone" type="tel" placeholder="(00) 00000-0000" required>
 
-                <label for="mensagem">Envie sua mensagem</label>
-                <textarea id="mensagem" rows="3" placeholder="Olá, gostaria de falar com um consultor!"></textarea>
+                    <label for="mensagem">Envie sua mensagem</label>
+                    <textarea id="mensagem" rows="3" placeholder="Olá, gostaria de falar com um consultor!"></textarea>
 
-                <button class="btnPadraoQuatro" type="submit">Enviar</button>
+                    <button class="btnPadraoQuatro" type="submit">Enviar</button>
                 </form>
             </div>
         </div>

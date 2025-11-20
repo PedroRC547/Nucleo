@@ -5,6 +5,11 @@
     font-family: Arial, sans-serif;
 }
 
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 .btnPadraoUm {
     background-color: white;
     color: #242423;
@@ -31,18 +36,23 @@
 }
 
 .btnPadraoTres {
-    background-color: transparent;
+    background-color: white;
     color: #778DA9;
-    border: none;
+    border: 3px solid #778DA9;
     border-radius: 50px;
-    height: 60px;
+    height: 50px;
     width: auto;
+    min-width: 150px;
     font-size: 18px;
     cursor: pointer;
     font-weight: bold;
-    padding: 20px;
-    border: 3px solid #778DA9;
-    bottom: 0;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+}
+
+.btnPadraoTres:hover {
+    background-color: #778DA9;
+    color: white;
 }
 
 
@@ -74,10 +84,11 @@
 .navbar {   
     height: 100px;
     width: 100%;
-    margin: 0px;
+    margin: 0px !important;
     background-color: #242423;
     color: white;
-    padding: 10px 100px 10px 100px;
+    padding: 10px 100px 10px 100px !important;
+    box-sizing: border-box;
 
     display: flex;              
     justify-content: flex-end; 
@@ -155,15 +166,27 @@
 #bannerHome {
     display: flex;
     justify-content: space-between;
-    height: 900px;
+    align-items: center;
+    height: auto;
+    min-height: 700px;
+    position: relative;
+    overflow: hidden;
 }
 
 #bannerHome-texto {
     width: 500px;
+    flex-shrink: 0;
 }
 
 #bannerHome-texto h2 {
-    font-size: 50px;
+    font-size: 45px;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+#bannerHome-texto h2 strong {
+    font-size: 55px;
+    font-weight: bold;
 }
 
 #bannerHome-texto p {
@@ -173,26 +196,54 @@
 #bannerSobreNos-imagem {
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-end;
+    max-width: 600px;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+#bannerSobreNos-imagem img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
 }
 
 #bannerSobreNos {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: auto;
-    padding: 0px 0px 0px 100px;
+    padding: 50px 0px 50px 100px;
+    gap: 60px;
 }
 
 #bannerSobreNos-texto {
-    width: 500px;
+    flex: 1;
+    max-width: 600px;
 }
 
 #bannerSobreNos-texto h2 {
     font-size: 50px;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+#bannerSobreNos-texto h2 strong {
+    font-weight: bold;
 }
 
 #bannerSobreNos-texto p {
-    font-size: 35px;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #242423;
+}
+
+#bannerSobreNos-texto p:last-child {
+    margin-bottom: 0;
 }
 
 #bannerSobreNos-imagem {
@@ -220,6 +271,45 @@
     height: auto;       
     object-fit: cover;    
     border-radius: 20px;  
+}
+
+/* Grid de imagens para bannerHome */
+#bannerHome-imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 600px;
+}
+
+.grid-imagens {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    height: 500px;
+}
+
+.grid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Linha curva no canto inferior esquerdo */
+.curved-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 0 100% 0 0;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 .bannerMarcas {
@@ -363,19 +453,37 @@
 .bannerPlanosHome {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 100px;
-    gap: 50px;
+    padding: 100px 50px;
+    gap: 20px;
+    position: relative;
+    background-color: white;
+}
+
+.planos-carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    flex-wrap: wrap;
 }
 
 .bannerPlanosHome h2{
     font-size: 35px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #242423;
 }
 
 .bannerPlanosHome p{
-    font-size: 30px;
+    font-size: 20px;
+    color: #242423;
+    margin-bottom: 30px;
+    line-height: 1.5;
 }
 
 
@@ -385,16 +493,56 @@
     align-items: center;
     text-align: center;
     background-color: #E5E5E5;
-       width: 500px;
-    height: 500px;
+    width: 400px;
+    min-width: 350px;
+    height: auto;
+    min-height: 450px;
     border-radius: 50px;
-    padding: 0px 20px 20px 20px;
+    padding: 50px 30px 40px 30px;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .planoHome img {
-    width: 150px;
+    width: 120px;
     height: auto;
-    transform: translateY(-50%);
+    margin-bottom: 30px;
+    margin-top: 0;
+    transform: none;
+}
+
+.planoHome h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.planoHome p {
+    margin-top: 0;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.planoHome button {
+    margin-top: auto;
+}
+
+.carousel-arrow {
+    background: none;
+    border: none;
+    font-size: 60px;
+    color: #ccc;
+    cursor: pointer;
+    padding: 0 20px;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.carousel-arrow:hover {
+    color: #778DA9;
+}
+
+.carousel-arrow:active {
+    color: #537a9e;
 }
 
 #bannerPlanosSaibaMais {
@@ -531,117 +679,91 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px auto;
+    padding: 60px 100px;
+    background-color: white;
 }
 
 /* NOVO ESTILO: Define a janela de visualização */
 .carousel-window {
-    width: 95%; 
-    overflow: hidden; 
+    width: 100%; 
+    max-width: 1400px;
+    overflow: visible; 
     position: relative;
-    border-radius: 8px;
     margin: 0 auto;
-    z-index: 1;
 }
 
 .image-gallery {
     display: flex;
-    /* Removemos o overflow: hidden e as larguras daqui */
-    /* Agora, ele tem a largura para acomodar TODOS os 5 itens (3 principais + 2 clones) */
-    width: 100%; /* (5 itens * 33.333% por item) */
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
     position: relative;
 }
 
-/* Pseudo-elementos (mantidos, mas aplicados ao .carousel-window para garantir o z-index correto) */
-.carousel-window::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 10%; 
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    z-index: 2; 
-    pointer-events: none; 
-}
-
-.carousel-window::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 10%; 
-    height: 100%;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    z-index: 2; 
-    pointer-events: none; 
-}
-
-
 .gallery-item {
     box-sizing: border-box; 
-    min-width: 33.333%; 
+    flex: 1;
+    max-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 10px; 
+    overflow: hidden;
 }
 
 .gallery-item img {
-    width: 800px; 
+    width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
+    border-radius: 12px;
+    object-fit: cover;
+    aspect-ratio: 1;
 }
 
-.pagination-dots {
-    margin-top: 15px;
+.pagination-bars {
+    margin-top: 30px;
     display: flex;
     gap: 10px;
+    justify-content: center;
 }
 
-.dot {
-    height: 10px;
-    width: 10px;
-    background-color: #bbb;
-    border-radius: 50%;
+.bar {
+    height: 4px;
+    width: 40px;
+    background-color: #ddd;
     display: inline-block;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border-radius: 2px;
 }
 
-.dot.active {
-    background-color: #717171;
+.bar.active {
+    background-color: #242423;
 }
 
 .carousel-caption {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #333;
+    margin-top: 40px;
+    font-size: 24px;
+    color: #242423;
     text-align: center;
-    min-height: 1.5em; 
-    position: relative; /* Para ficar acima do fade */
-    z-index: 3;
+    font-weight: normal;
 }
 
 .cta-button {
-    background-color: #6a8eaf; 
+    background-color: #537a9e; 
     color: white;
-    padding: 10px 20px;
+    padding: 15px 40px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 1em;
-    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 25px;
     transition: background-color 0.3s ease;
-    position: relative; /* Para ficar acima do fade */
-    z-index: 3;
 }
 
 .cta-button:hover {
-    background-color: #537a9e;
+    background-color: #6a8eaf;
 }
 
 .image-gallery-nosso-solucoes-texto {
@@ -691,10 +813,11 @@
 }
 
 .contato li {
-    margin-bottom: 8px;
+    margin-bottom: 0;
     display: flex;
     align-items: center;
     font-size: 20px;
+    color: #242423;
 }
 
 .contato li i {
@@ -710,39 +833,401 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
     width: 100%;
+    max-width: 600px;
     padding: 50px;
 }
 
-.formCarreira input{
-    background-color: white;
-    border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    padding: 10px;
+.formCarreira label {
+    font-size: 18px;
+    color: #242423;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
 }
 
-.formCarreira textarea{
-    background-color: white;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.formCarreira input {
+    background-color: #E5E5E5;
+    border: none;
+    border-radius: 50px;
     width: 100%;
-    padding: 10px;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #242423;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.formCarreira input::placeholder {
+    color: #999;
+}
+
+.formCarreira input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #537a9e;
+}
+
+.formCarreira button {
+    align-self: flex-end;
+    margin-top: 10px;
+    width: auto;
+}
+
+/* Estilização do input de arquivo */
+.file-upload-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.file-upload-wrapper input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.file-upload-text {
+    display: block;
+    background-color: #E5E5E5;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #999;
+    text-align: center;
+    border: none;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.formCarreira label {
+    color: #242423;
+}
+
+.file-upload-wrapper:hover .file-upload-text {
+    background-color: #d5d5d5;
+}
+
+.file-upload-wrapper input[type="file"]:focus + .file-upload-text {
+    outline: none;
+    box-shadow: 0 0 0 2px #537a9e;
 }
 
 #bannerCarreira {
     height: auto;
     width: 100%;
+    padding: 0px 0px 0px 100px;
+}
+
+.carreira-container {
     display: flex;
-    align-items: center;    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    margin: 0 auto;
+}
+
+.carreira-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 100px;
+}
+
+.carreira-info h2 {
+    font-size: 65px;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.carreira-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.carreira-texto p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.carreira-texto p strong {
+    font-weight: bold;
+}
+
+.carreira-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        background-color: #242423;
+    flex: 1;
+    display: flex;
+    height: 100%;
+    padding: 100px;
+}
+
+/* Responsividade para página de Carreira */
+@media (max-width: 1024px) {
+    .carreira-container {
+        flex-direction: column;
+    }
+    
+    .carreira-form-wrapper {
+        justify-content: flex-start;
+    }
+    
+    .formCarreira {
+        max-width: 100%;
+    }
+    
+    .carreira-info h2 {
+        font-size: 50px;
+    }
+}
+
+/* Estilos para seção de Planos em Nossas Soluções */
+#planosSection {
+    background-color: #E5E5E5;
+    padding: 60px 0px 60px 100px;
+    min-height: 600px;
+}
+
+.planos-title {
+    font-size: 24px;
+    color: #242423;
+    margin-bottom: 50px;
+    font-weight: normal;
+}
+
+.planos-title strong {
+    font-weight: bold;
+}
+
+.planos-container {
+    position: relative;
+    margin: 0 auto;
+}
+
+.plano-content {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.plano-content.active {
+    display: flex;
+}
+
+.plano-texto {
+    flex: 1;
+    max-width: 500px;
+}
+
+.plano-texto h3 {
+    font-size: 65px;
+    color: #242423;
+    margin: 0 0 30px 0;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+.plano-texto h3 strong {
+    font-weight: bold;
+}
+
+.plano-texto p {
+    font-size: 18px;
+    color: #242423;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btnPlanos {
+    background-color: #778DA9;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.btnPlanos:hover {
+    background-color: #537a9e;
+}
+
+.planos-pagination {
+    display: flex;
+    gap: 10px;
+}
+
+.plano-bar {
+    height: 4px;
+    width: 40px;
+    background-color: #ddd;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.plano-bar.active {
+    background-color: #242423;
+}
+
+.plano-imagem {
+    flex: 1;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    padding-right: 0;
+}
+
+.plano-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 0px 0px 0px 300px;
+    object-fit: cover;
+    float: right;
 }
 
 #form-contato {
     border-radius: 50px;
     background-color: #E5E5E5;  
+}
+
+/* Estilos para página de Contato */
+#bannerContato {
+    background-color: white;
+    width: 100%;
+    padding: 100px;
+}
+
+.contato-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contato-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contato-info h2 {
+    font-size: 65px;
+    color: #242423;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.contato-info h2 strong {
+    font-weight: bold;
+    text-transform: none;
+}
+
+
+.contato-form-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.formContato {
+    background-color: #E5E5E5;
+    border-radius: 50px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    max-width: 600px;
+    padding: 50px;
+}
+
+.formContato label {
+    font-size: 18px;
+    color: #242423;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.formContato input,
+.formContato textarea {
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #242423;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.formContato textarea {
+    border-radius: 30px;
+    min-height: 120px;
+    resize: vertical;
+    padding: 15px 20px;
+}
+
+.formContato input::placeholder,
+.formContato textarea::placeholder {
+    color: #999;
+}
+
+.formContato input:focus,
+.formContato textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #537a9e;
+}
+
+.formContato button {
+    align-self: flex-end;
+    margin-top: 10px;
+    width: auto;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .contato-container {
+        flex-direction: column;
+    }
+    
+    .contato-form-wrapper {
+        justify-content: flex-start;
+    }
+    
+    .formContato {
+        max-width: 100%;
+    }
 }
