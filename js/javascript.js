@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gallery = document.querySelector('.image-gallery');
     let galleryItems = document.querySelectorAll('.gallery-item');
     const bars = document.querySelectorAll('.bar');
-    const captionElement = document.querySelector('.carousel-caption');
+    const captionElement = document.querySelector('.carousel-caption-titulo');
     const ctaButton = document.querySelector('.cta-button');
     
     // Verifica se estamos na página sobreNos (com barras de paginação)
@@ -134,3 +134,74 @@ function moveCarousel(direction) {
     // Por enquanto, as setas são apenas visuais
     console.log('Carousel move:', direction);
 }
+
+
+function initializeNavbar() {
+    // Seleciona o botão hamburguer e o menu mobile pelos seus IDs
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Verifica se os elementos existem para evitar erros
+    if (!hamburgerBtn || !mobileMenu) {
+        console.error("Erro: Elementos 'hamburger-btn' ou 'mobile-menu' não encontrados no DOM.");
+        return;
+    }
+
+    // --- Lógica do Botão Hamburguer ---
+    hamburgerBtn.addEventListener('click', function() {
+        // 1. Alterna a classe 'active' para animar o X e mostrar/ocultar o menu
+        hamburgerBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+
+        // 2. Atualiza os atributos de acessibilidade (ARIA)
+        const isExpanded = hamburgerBtn.classList.contains('active');
+        hamburgerBtn.setAttribute('aria-expanded', isExpanded);
+
+        // 3. Trava o scroll do corpo quando o menu estiver aberto
+        document.body.style.overflow = isExpanded ? 'hidden' : 'auto';
+    });
+
+    // --- Lógica de Navegação Única (Para Links Dentro do Menu Mobile) ---
+    // Você pode usar esta função se desejar remover o 'onclick' direto no HTML
+    
+    // Seleciona todos os botões/links dentro do menu mobile
+    const menuLinks = mobileMenu.querySelectorAll('button'); 
+
+    menuLinks.forEach(link => {
+        // Garante que o link navegue para a URL definida no 'onclick' OU usa 'href'
+        link.addEventListener('click', function(event) {
+            
+            // Simula o comportamento de navegação que estava no HTML
+            // Note: Se você usou <button onclick="...">, isso é opcional, 
+            // mas é melhor para a manutenção ter toda a lógica aqui.
+            
+            // Fecha o menu antes de navegar (melhora a UX)
+            hamburgerBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+
+            // O código de navegação real (usando window.location.href)
+            // deve ser mantido no seu HTML ou implementado aqui:
+            // window.location.href = event.target.getAttribute('data-href') || event.target.value; 
+        });
+    });
+    
+    // --- Lógica para Mudar o Botão Ativo (Desktop e Mobile) ---
+    // Fazendo isso no JS, você não precisa repetir a lógica de qual botão está ativo
+    const allNavButtons = document.querySelectorAll('.navbar button, .mobile-menu button');
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html'; // Obtém o nome do arquivo atual
+
+    allNavButtons.forEach(button => {
+        // Pega o destino do botão (usando 'onclick' ou 'data-href')
+        const buttonDestination = button.getAttribute('onclick');
+        
+        if (buttonDestination && buttonDestination.includes(currentPath)) {
+            // Se o destino do botão contém o nome da página atual, torna-o ativo
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializeNavbar);

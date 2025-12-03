@@ -5,21 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empresas Parceiras</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div class="navbar">
-        <div>   
-            <img src="Img/Logo_Nucleo_Preto-1-removebg.png" alt="logoImg">
+        <div class="navbar-logo">
+            <img id="nucleo_logo" src="Img/Logo_Nucleo_Preto-1-removebg.png" alt="logoImg">
         </div>
-        <div>  
+
+        <div class="navbar-links-desktop">
             <button onclick="window.location.href='index.html'">Home</button>
             <button onclick="window.location.href='sobreNos.html'">Sobre Nós</button>
             <button onclick="window.location.href='nossasSolucoes.html'">Nossas Soluções</button>
-            <!--<button onclick="window.location.href='blog.html'">Blog</button>-->
             <button onclick="window.location.href='carreira.html'">Carreira</button>
             <button onclick="window.location.href='contato.html'">Contato</button>
         </div>
+        
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Abrir menu" aria-expanded="false">
+            <i class="bi bi-list"></i>
+        </button>
     </div>
+
+    <nav id="mobile-menu" class="mobile-menu">
+        <button onclick="window.location.href='index.html'">Home</button>
+        <button onclick="window.location.href='sobreNos.html'">Sobre Nós</button>
+        <button onclick="window.location.href='nossasSolucoes.html'">Nossas Solucoes</button>
+        <button onclick="window.location.href='carreira.html'">Carreira</button>
+        <button onclick="window.location.href='contato.html'">Contato</button>
+    </nav>
     <div class="footer">
     <div class="infoFooter">
         <div class="logo-area">
@@ -45,14 +59,16 @@
         </div>
         
         <div class="contact-info">
-            <p>(00) 0000-0000</p>
-            <p>R. Lorem Ipsum, XXXX - Lorem Ipsum</p>
+            <p>(11) 2366-5425</p>
+            <p>Praça Silvio Romero, 55 - São Paulo</p>
         </div>
     </div>
     
     <div class="copyright">
-        <p>CNPJ 00.000.000/0000-00 Copyright &copy; 2025</p>
+        <p>CNPJ 61.707.633/0001-29 Copyright &copy; 2025</p>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/javascript.js"></script>
 </body>
 </html>
