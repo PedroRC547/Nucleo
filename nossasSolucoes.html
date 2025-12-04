@@ -41,11 +41,11 @@
     </div>
 
     <nav id="mobile-menu" class="mobile-menu">
-        <button onclick="window.location.href='index.html'">Home</button>
-        <button onclick="window.location.href='sobreNos.html'">Sobre Nós</button>
-        <button onclick="window.location.href='nossasSolucoes.html'"  class="active">Nossas Solucoes</button>
-        <button onclick="window.location.href='carreira.html'">Carreira</button>
-        <button onclick="window.location.href='contato.html'">Contato</button>
+        <button class="menu-item" onclick="window.location.href='index.html'">Home</button>
+        <button class="menu-item" onclick="window.location.href='sobreNos.html'">Sobre Nós</button>
+        <button class="menu-item active" onclick="window.location.href='nossasSolucoes.html'"  class="active">Nossas Solucoes</button>
+        <button class="menu-item" onclick="window.location.href='carreira.html'">Carreira</button>
+        <button class="menu-item" onclick="window.location.href='contato.html'">Contato</button>
     </nav>
 
     <section id="planosSection" class="planos-section">
@@ -89,7 +89,7 @@
             <!-- Conteúdo 3: Seguros RE -->
             <div class="plano-content" data-plano="2">
                 <div class="plano-texto">
-                    <h3><strong>seguros re</strong></h3>
+                    <h3><strong>Seguros RE</strong></h3>
                     <p>Para pessoas físicas e jurídicas que precisam proteger patrimônios e riscos específicos. Atuamos de forma consultiva para recomendar a solução ideal para cada cenário.</p>
                     <button class="btnPlanos">Solicite uma proposta</button>
                     <div class="planos-pagination">
@@ -185,7 +185,8 @@
         <p>CNPJ 61.707.633/0001-29 Copyright &copy; 2025</p>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script  src="js/javascript.js">
+<script src="js/javascript.js"></script>
+<script>
     // Sistema de alternância entre os três planos
     document.addEventListener('DOMContentLoaded', function() {
         const planosContents = document.querySelectorAll('.plano-content');

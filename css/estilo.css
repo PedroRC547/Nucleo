@@ -1316,13 +1316,14 @@ body {
     #bannerHome-texto {
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 100%;
         text-align: center; /* Centraliza o texto */
         margin-bottom: 40px;
     }
 
      .btnPadraoUm{
-        width: auto;
+        width: 250px;
     }
 
     #bannerHome-texto h2 {
@@ -1439,6 +1440,8 @@ body {
     }
 
     #bannerPlanosSaibaMais-texto {
+        display: flex;
+        align-items: center;
         width: 100%;
         padding: 50px 20px;
     }
@@ -1461,10 +1464,10 @@ body {
 
     /* --- Footer --- */
     .infoFooter {
-        flex-direction: column; /* Footer em coluna */
+        flex-direction: row; 
         height: auto;
-        padding: 50px 20px;
-        gap: 30px;
+        padding: 20px 20px;
+        gap: 10px;
         text-align: center;
     }
     
@@ -1472,25 +1475,26 @@ body {
         align-items: center; /* Centraliza logo e ícones */
         padding-right: 0;
         border-right: none;
-        padding-bottom: 20px;
-        border-bottom: 1px solid white;
+        border-right: 1px solid white;
         width: 100%;
     }
 
     .links-group {
-        flex-direction: column; /* Links em coluna */
-        gap: 20px;
-        padding-left: 0;
-        margin-right: 0;
-        width: 100%;
+        display: none;
     }
     
     .link-list {
         text-align: center;
     }
+
+    .contact-info {
+        text-align: center;
+        width: 100%;
+    }   
     
     .contact-info p {
         text-align: center;
+        width: auto;
     }
     
     .copyright {
@@ -1580,146 +1584,6 @@ body {
     
 }
 
-/* =======================================
-   OUTRAS RESPONSIVIDADES (Tablet)
-   ======================================= */
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* Ajustes para telas maiores que mobile, mas menores que desktop (ex: tablets) */
-
-    /* --- Navbar --- */
-    .navbar {
-        padding: 10px 40px 10px 40px !important;
-    }
-
-    /* --- Banners Gerais --- */
-    .bannerBlack,
-    .bannerBlackCarreira,
-    .bannerWhiteCarreira {
-        padding: 80px 40px;
-    }
-
-    /* --- Banner Home --- */
-    #bannerHome {
-        padding: 50px 40px;
-    }
-
-    #bannerHome-texto {
-        width: 40%;
-    }
-
-    #bannerHome-imagem {
-        max-width: 50%;
-    }
-
-    #bannerHome-texto h2 {
-        font-size: 40px;
-    }
-
-    #bannerHome-texto h2 strong {
-        font-size: 50px;
-    }
-    
-    /* --- Banner Sobre Nós --- */
-    #bannerSobreNos {
-        padding: 50px 40px;
-        gap: 40px;
-    }
-    
-    #bannerSobreNos-texto {
-        max-width: 50%;
-    }
-    
-    #bannerSobreNos-imagem {
-        max-width: 50%;
-    }
-    
-    #bannerSobreNos-texto h2 {
-        font-size: 40px;
-    }
-    
-    #bannerSobreNos-imagem img {
-        height: 500px; /* Reduz um pouco a altura da imagem */
-    }
-
-    /* --- Banner Etapas --- */
-    .bannerEtapas {
-        padding: 80px 40px;
-    }
-
-    .bannerEtapas-descricao img {
-        width: 350px;
-    }
-
-    .conteiner-texto-etapas {
-        width: 500px;
-    }
-    
-    /* --- Banner Planos Home --- */
-    .bannerPlanosHome {
-        padding: 80px 40px;
-        gap: 15px;
-    }
-    
-    .planoHome {
-        width: 300px;
-        min-width: 300px;
-        padding: 30px 20px;
-        min-height: 400px;
-    }
-    
-    /* --- Banner Planos Saiba Mais --- */
-    #bannerPlanosSaibaMais-texto {
-        width: 60%;
-        padding: 80px 40px;
-    }
-    
-    #bannerPlanosSaibaMais-imagem img {
-        height: 700px;
-        padding-right: 40px;
-    }
-    
-    /* --- Footer --- */
-    .infoFooter {
-        padding: 80px 40px;
-        height: 180px;
-    }
-    
-    /* --- Carousel Imagens/Soluções --- */
-    .carousel-section {
-        padding: 60px 40px;
-    }
-    
-    /* --- Banner Fale Com A Nucleo --- */
-    .BannerFaleComANucleo {
-        padding: 80px 40px;
-    }
-
-    .BannerFaleComANucleo h2 {
-        font-size: 50px;
-    }
-
-    /* --- Planos Soluções (Página Soluções) --- */
-    #planosSection {
-        padding: 60px 0px 60px 40px;
-    }
-
-    .plano-texto h3 {
-        font-size: 50px;
-    }
-
-    /* --- Contato --- */
-    #bannerContato {
-        padding: 80px 40px;
-    }
-    
-    .contato-info h2 {
-        font-size: 50px;
-    }
-    
-    .formContato {
-        max-width: 500px;
-    }
-}
 
 
 
@@ -1739,6 +1603,13 @@ body {
 /* O menu mobile deve estar sempre oculto no desktop */
 .mobile-menu {
     display: none; 
+}
+
+.mobile-menu button.active {
+
+    background-color: #383838; 
+    color: #ffffff; 
+    border-left: 5px solid #007bff; 
 }
 
 
