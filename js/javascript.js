@@ -192,3 +192,24 @@ function initializeNavbar() {
 }
 
 document.addEventListener('DOMContentLoaded', initializeNavbar);
+
+function mostrarTexto(botao, id) {
+    if (botao.classList.contains('active')) {
+        botao.classList.remove('active');
+        
+        document.getElementById(id).style.display = 'none';
+
+        return; 
+    }
+
+    document.querySelectorAll('.conteudo').forEach(div => {
+        div.style.display = 'none';
+    });
+
+    document.getElementById(id).style.display = 'block';
+
+    document.querySelectorAll('.btnEtapas-Btns .btnPadraoDois')
+        .forEach(btn => btn.classList.remove('active'));
+
+    botao.classList.add('active');
+}

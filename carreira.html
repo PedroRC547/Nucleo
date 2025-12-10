@@ -145,7 +145,7 @@
                     // Envia o formulário
                     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this)
                         .then(() => {
-                            alert('✅ Currículo enviado com sucesso! Entraremos em contato.');
+                            alert('Currículo enviado com sucesso! Entraremos em contato.');
                             this.reset(); 
                             if (fileText) {
                                 fileText.textContent = 'Importar Arquivo'; 

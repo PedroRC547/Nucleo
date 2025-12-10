@@ -90,8 +90,8 @@
         <div class="bannerEtapas-selector">
             <h2>Saúde e proteção <br>com acompanhamento de verdade</h2>
             <div class="btnEtapas-Btns">
-                <button class="btnPadraoDois active" onclick="mostrarTexto(this, 'diag')">Diagnóstico do Perfil</button>
-                    <div id="diag" class="conteudo">
+                <button class="btnPadraoDois" onclick="mostrarTexto(this, 'diag')">Diagnóstico do Perfil</button>
+                    <div id="diag" class="conteudo hidden">
                         <p>Entendemos a necessidade da empresa, o momento do time e os objetivos de proteção.</p>
                     </div>
                 <button class="btnPadraoDois" onclick="mostrarTexto(this, 'reco')">Recomendação Personalizada</button>
@@ -146,11 +146,11 @@
     </div>
     <div id="bannerPlanosSaibaMais">
         <div id="bannerPlanosSaibaMais-texto">
-            <h2>Na Núcleo, o contato não <strong>termina com a assinatura.</strong></h2>
+            <h2>Na Núcleo, o contato não <br><strong>termina com a assinatura.</strong></h2>
             <p>Nossos especialistas acompanham cada etapa da sua jornada. Mais do que um plano de saúde: um cuidado
                 contínuo.</p>
             <div style="margin-top: 50px;">
-                <button class="btnPadraoUm" onclick="window.location.href=''">Saiba mais</button>
+                <button class="btnPadraoUm" style="width: 200px;" onclick="window.location.href=''">Saiba mais</button>
             </div>
 
         </div>
@@ -196,23 +196,5 @@
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="js/javascript.js"></script>
-<script>
-    function mostrarTexto(botao, id) {
-        // Esconde todos os textos
-        document.querySelectorAll('.conteudo').forEach(div => {
-            div.style.display = 'none';
-        });
-
-        // Mostra apenas o conteúdo clicado
-        document.getElementById(id).style.display = 'block';
-
-        // Remove active de todos os botões
-        document.querySelectorAll('.btnEtapas-Btns .btnPadraoDois')
-            .forEach(btn => btn.classList.remove('active'));
-
-        // Adiciona active ao botão clicado
-        botao.classList.add('active');
-    }
-</script>
 </body>
 </html>

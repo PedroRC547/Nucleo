@@ -570,11 +570,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 800px;
+    width: 1000px;
 }
 
 #bannerPlanosSaibaMais-texto h2{
-    font-size: 35px;
+    font-size: 50px;
     margin-bottom: 20px;
 }
 
@@ -588,7 +588,7 @@ body {
 }
 
 #bannerPlanosSaibaMais-imagem img{
-    height: 900px;
+    height: auto;
     width: auto;
 }
 
@@ -601,7 +601,7 @@ body {
 
 /* --- Footer --- */
 .footer {
-    background-color: #f0f0f0; /* Cor de fundo para a seção inferior */
+    background-color: #f0f0f0; 
     font-family: Arial, sans-serif;
 }
 
@@ -689,34 +689,34 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 100px;
+    padding: 0px 0px 100px 0px;
     background-color: white;
 }
 
 .carousel-window {
     width: 100%;
-    max-width: 1400px;
-    overflow: visible;
+    max-width: 1000px; 
+    overflow: hidden; 
     position: relative;
     margin: 0 auto;
 }
 
 .image-gallery {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 30px;
-    width: 100%;
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
+    width: 400%; 
     position: relative;
 }
 
 .gallery-item {
     box-sizing: border-box;
-    flex: 1;
-    max-width: 400px;
+    width: 25%; 
+    flex-shrink: 0; 
+    
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    padding: 0 15px; 
     overflow: hidden;
 }
 
@@ -726,9 +726,52 @@ body {
     display: block;
     border-radius: 12px;
     object-fit: cover;
-    aspect-ratio: 1;
+    aspect-ratio: 16/9; 
 }
 
+.gallery-item.active-slide .carousel-caption-titulo {
+    opacity: 1; 
+}
+
+.carousel-caption-titulo {
+    margin-top: 40px;
+    font-size: 24px;
+    color: #242423;
+    text-align: center;
+    font-weight: normal;
+    opacity: 0; 
+    transition: opacity 0.5s ease;
+}
+
+.image-gallery-nosso-solucoes-texto {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 90%;
+}
+
+/* --- Botão CTA "Saiba mais" --- */
+.cta-button {
+    background-color: #537a9e;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #6a8eaf;
+}
+
+/* --- Barras de Paginação --- */
 .pagination-bars {
     margin-top: 30px;
     display: flex;
@@ -749,44 +792,6 @@ body {
 .bar.active {
     background-color: #242423;
 }
-
-
-.carousel-caption-titulo {
-    margin-top: 40px;
-    font-size: 24px;
-    color: #242423;
-    text-align: center;
-    font-weight: normal;
-}
-
-
-.cta-button {
-    background-color: #537a9e;
-    color: white;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 25px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #6a8eaf;
-}
-
-.image-gallery-nosso-solucoes-texto {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    max-width: 90%;
-}
-
 /* --- Banner Fale Com A Nucleo --- */
 .BannerFaleComANucleo {
     display: flex;
@@ -1288,12 +1293,12 @@ body {
     .bannerBlackCarreira,
     .bannerWhiteCarreira,
     #bannerContato {
-        padding: 50px 20px; /* Reduz o padding lateral em banners */
+        padding: 50px 20px; 
     }
 
     /* --- Navbar --- */
     .navbar {
-        padding: 10px 20px !important; /* Reduz o padding da navbar */
+        padding: 10px 20px !important; 
         height: 80px;
     }
 
@@ -1303,12 +1308,12 @@ body {
     }
 
     #nucleo_logo {
-        width: 120px; /* Reduz o tamanho do logo */
+        width: 120px;
     }
 
     /* --- Banner Home --- */
     #bannerHome {
-        flex-direction: column; /* Transforma em coluna */
+        flex-direction: column; 
         min-height: auto;
         padding: 50px 20px;
     }
@@ -1318,7 +1323,7 @@ body {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        text-align: center; /* Centraliza o texto */
+        text-align: center;
         margin-bottom: 40px;
     }
 
@@ -1327,15 +1332,15 @@ body {
     }
 
     #bannerHome-texto h2 {
-        font-size: 30px; /* Reduz o tamanho do título */
+        font-size: 30px; 
     }
 
     #bannerHome-texto h2 strong {
-        font-size: 40px; /* Reduz o tamanho do strong */
+        font-size: 40px;
     }
 
     #bannerHome-texto p {
-        font-size: 20px; /* Reduz o tamanho do parágrafo */
+        font-size: 20px; 
     }
 
     #bannerHome-imagem {
@@ -1343,17 +1348,17 @@ body {
     }
 
     .grid-imagens {
-        height: 300px; /* Altura menor para o grid de imagens */
+        height: 300px; 
         gap: 10px;
     }
 
     .curved-line {
-        display: none; /* Opcional: esconder linhas decorativas */
+        display: none;
     }
 
     /* --- Banner Sobre Nós --- */
     #bannerSobreNos {
-        flex-direction: column; /* Transforma em coluna */
+        flex-direction: column;
         padding: 50px 20px;
         gap: 30px;
         text-align: center;
@@ -1370,12 +1375,12 @@ body {
 
     #bannerSobreNos-imagem img{
         height: auto;
-        max-height: 400px; /* Limita a altura da imagem */
+        max-height: 400px; 
     }
 
     /* --- Banner Marcas --- */
     .bannerMarcas-slider img {
-        max-height: 30px; /* Reduz o tamanho dos logos */
+        max-height: 30px; 
     }
     
     /* --- Banner Etapas --- */
@@ -1388,7 +1393,7 @@ body {
     }
 
     .bannerEtapas-descricao {
-        flex-direction: column; /* Transforma em coluna */
+        flex-direction: column; 
         padding: 0;
         text-align: center;
     }
@@ -1396,13 +1401,13 @@ body {
     .bannerEtapas-descricao img {
         width: 100%;
         height: auto;
-        border-radius: 50px 50px 0px 0px; /* Ajusta o border-radius */
+        border-radius: 50px 50px 0px 0px; 
     }
 
     .conteiner-texto-etapas {
         width: 100%;
         height: auto;
-        border-radius: 0px 0px 50px 50px; /* Ajusta o border-radius */
+        border-radius: 0px 0px 50px 50px; 
         padding: 30px;
     }
     
@@ -1420,7 +1425,7 @@ body {
     }
 
     .planos-carousel {
-        flex-direction: column; /* Planos empilham */
+        flex-direction: column;
         flex-wrap: nowrap;
     }
 
@@ -1430,12 +1435,12 @@ body {
     }
 
     .carousel-arrow {
-        display: none; /* Esconde as setas, já que os planos vão empilhar */
+        display: none; 
     }
 
     /* --- Banner Planos Saiba Mais --- */
     #bannerPlanosSaibaMais {
-        flex-direction: column; /* Transforma em coluna */
+        flex-direction: column; 
         text-align: center;
     }
 
@@ -1459,7 +1464,7 @@ body {
     }
     
     #bannerPlanosSaibaMais img {
-        display: none; /* Oculta a imagem (já oculta acima, mas para garantir) */
+        display: none; 
     }
 
     /* --- Footer --- */
@@ -1472,7 +1477,7 @@ body {
     }
     
     .logo-area {
-        align-items: center; /* Centraliza logo e ícones */
+        align-items: center; 
         padding-right: 0;
         border-right: none;
         border-right: 1px solid white;
@@ -1502,29 +1507,29 @@ body {
     }
 
     /* --- Carousel Imagens/Soluções --- */
-    .carousel-section {
-        padding: 40px 20px;
-    }
 
     .image-gallery {
-        overflow-x: scroll; /* Permite scroll horizontal no mobile */
-        justify-content: flex-start; /* Alinha para a esquerda no scroll */
+        overflow-x: scroll; 
+        justify-content: flex-start; 
         gap: 15px;
     }
 
     .gallery-item {
-        min-width: 80%; /* Define uma largura mínima para o item */
-        flex-shrink: 0; /* Impede que os itens diminuam */
+        min-width: 80%;
+        flex-shrink: 0; 
         max-width: 100%;
     }
     
-    /* Opcional: Esconder a paginação se usar scroll */
+    .gallery-item-sobreNos{
+        width: 100px !important;
+        height: 100px !important;
+    }
+
     .pagination-bars {
         display: none;
     }
     
 
-    
     /* --- Banner Fale Com A Nucleo --- */
     .BannerFaleComANucleo {
         flex-direction: column;
@@ -1585,11 +1590,9 @@ body {
 }
 
 
-
-
 /* ESTILOS DE DESKTOP (Padrão) */
 .hamburger-btn {
-    display: none; /* Esconde no desktop */
+    display: none; 
 }
 
 /* Os links ficam na horizontal no desktop */
@@ -1597,7 +1600,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* ou o gap que você usa */
+    gap: 10px; 
 }
 
 /* O menu mobile deve estar sempre oculto no desktop */
@@ -1626,12 +1629,10 @@ body {
     /* 2. Mostra o botão hamburguer no mobile */
     .hamburger-btn {
         display: block;
-        /* Garanta que o botão esteja estilizado para ser visível e no topo */
         background: transparent;
         border: none;
         cursor: pointer;
         z-index: 1000;
-        /* Adicione estilos para as linhas aqui (hamburger-line) */
     }
 
     .hamburger-btn i{
@@ -1639,14 +1640,13 @@ body {
     }
 
 
-    /* 3. Estiliza o menu mobile (inicialmente oculto) */
     .mobile-menu {
         position: fixed;
-        top: 80px; /* Ajuste para começar abaixo da navbar */
+        top: 80px; 
         left: 0;
         width: 100%;
-        height: calc(100% - 80px); /* Ocupa o restante da tela */
-        background-color: #242423; /* Cor do seu navbar/banner black */
+        height: calc(100% - 80px); 
+        background-color: #242423; 
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
@@ -1670,7 +1670,7 @@ body {
 
     /* 5. Estado ATIVO (mostra o menu) */
     .mobile-menu.active {
-        transform: translateX(0); /* Move para a posição visível */
+        transform: translateX(0);
         display: flex; 
     }
 }

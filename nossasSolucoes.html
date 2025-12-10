@@ -109,8 +109,8 @@
         <div class="bannerEtapas-selector">
             <h2>Sua saúde bucal merece cuidado contínuo começando aqui.</h2>
             <div class="btnEtapas-Btns">
-                <button class="btnPadraoDois active" onclick="mostrarTexto(this, 'prev')">Prevenção que cabe no bolso</button>
-                    <div id="prev" class="conteudo">
+                <button class="btnPadraoDois" onclick="mostrarTexto(this, 'prev')">Prevenção que cabe no bolso</button>
+                    <div id="prev" class="conteudo hidden">
                         <p>Manter os exames e limpezas em dia é simples e econômico com um plano odontológico.</p>
                     </div>
                 <button class="btnPadraoDois" onclick="mostrarTexto(this, 'acess')">Acesso rápido a especialistas</button>
@@ -245,22 +245,6 @@
         startAutoRotate();
     });
 
-    function mostrarTexto(botao, id) {
-        // Esconde todos os textos
-        document.querySelectorAll('.conteudo').forEach(div => {
-            div.style.display = 'none';
-        });
-
-        // Mostra apenas o conteúdo clicado
-        document.getElementById(id).style.display = 'block';
-
-        // Remove active de todos os botões
-        document.querySelectorAll('.btnEtapas-Btns .btnPadraoDois')
-            .forEach(btn => btn.classList.remove('active'));
-
-        // Adiciona active ao botão clicado
-        botao.classList.add('active');
-    }
 </script>
 </body>
 </html>
