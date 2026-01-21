@@ -368,9 +368,10 @@ body {
 
 /* --- Banner Etapas --- */
 .bannerEtapas-selector {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    padding: 50px;
 }
 
 .btnEtapas-Btns {
@@ -386,10 +387,9 @@ body {
 .bannerEtapas {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    text-align: center;
-    width: auto;
+    max-width: 2560px;
     padding: 100px;
+    box-sizing: border-box;
 }
 
 #bannerEtapasBlack {
@@ -412,6 +412,7 @@ body {
 
 .bannerEtapas-selector h2 {
     font-size: 40px;
+    margin-bottom: 20px;
 }
 
 .bannerEtapas-descricao h2 {
@@ -425,17 +426,21 @@ body {
 
 .bannerEtapas-descricao {
     color: white;
+    flex: 1;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    padding: 50px;
+    padding: 50px 0;
+    max-width: none;
+    text-align: left;
 }
 
-.bannerEtapas-descricao img {
-    width: 430px;
+ .bannerEtapas-descricao img {
+    width: 100%;
+    max-width: 430px;
     height: auto;
-    border-radius: 50px 0px 0px 50px;
+    border-radius: 40px 0 0 40px;
 }
+
 
 .conteiner-texto-etapas {
     display: flex;
@@ -447,6 +452,16 @@ body {
     border-radius: 0px 50px 50px 0px;
     background-color: #778DA9;
     padding: 50px;
+}
+
+.conteiner-texto-etapas h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.conteiner-texto-etapas p {
+    font-size: 20px;
+    line-height: 1.4;
 }
 
 #conteiner-texto-etapas-white {
@@ -691,6 +706,8 @@ body {
     align-items: center;
     padding: 0px 0px 100px 0px;
     background-color: white;
+    width: 100%;
+    overflow: hidden;
 }
 
 .carousel-window {
@@ -712,12 +729,10 @@ body {
     box-sizing: border-box;
     width: 25%; 
     flex-shrink: 0; 
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 15px; 
-    overflow: hidden;
 }
 
 .gallery-item img {
@@ -739,7 +754,7 @@ body {
     color: #242423;
     text-align: center;
     font-weight: normal;
-    opacity: 0; 
+    opacity: 1; 
     transition: opacity 0.5s ease;
 }
 
@@ -996,58 +1011,6 @@ body {
     padding: 100px;
 }
 
-/* Responsividade para página de Carreira */
-@media (max-width: 1024px) {
-
-    .bannerEtapas{
-        display: flex;
-        flex-direction: column;
-    }
-    .btnEtapas-Btns{
-        display: flex;
-        flex-direction: column;
-        margin: 10px 0px;
-    }
-
-    .btnPadraoDois{
-        width: auto;
-        font-size: 12px;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 15px;
-        justify-content: space-between;
-    }
-
-    .carreira-container {
-        flex-direction: column;
-    }
-
-    .carreira-form-wrapper {
-        width: 100%;
-        padding: 50px 20px; /* Ajuste de padding */
-    }
-
-    .formCarreira {
-        width: 100%;
-    }
-
-    .contato-form-wrapper{
-        width: 100%;
-    }
-
-    .carreira-info {
-        padding: 50px 20px;
-    }
-
-    #bannerCarreira {
-        padding: 0;
-    }
-
-    .carreira-info h2 {
-        font-size: 50px;
-    }
-}
-
 /* --- Planos Soluções --- */
 #planosSection {
     background-color: #E5E5E5;
@@ -1268,6 +1231,46 @@ body {
     width: auto;
 }
 
+@media (max-width: 1440px) {
+
+    .bannerEtapas-selector {
+        max-width: 550px;
+    }
+
+    .texto-etapas-tamanho h2 {
+        font-size: 25px;
+    }
+
+    .texto-etapas-tamanho p {
+        font-size: 15px;
+    }
+}
+
+/* Responsividade para página de Home */
+@media (max-width: 1100px) {
+
+    .conteiner-texto-etapas {
+        height: 500px;
+    }
+
+    .bannerEtapas-descricao h2 {
+        font-size: 24px;
+    }
+    
+    .bannerEtapas-descricao p {
+        font-size: 18px;
+    }
+
+    .bannerEtapas-descricao img {
+    width: 380px;
+    height: auto;
+    }
+
+    #bannerPlanosSaibaMais img {
+        width: 550px;
+    }
+}
+
 /* Responsividade para Contato */
 @media (max-width: 1024px) {
     .contato-container {
@@ -1282,6 +1285,94 @@ body {
         max-width: 100%;
     }
 }
+
+/* Responsividade para página de Carreira */
+@media (max-width: 1024px) {
+
+    .bannerEtapas{
+        display: flex;
+        flex-direction: column;
+    }
+    /* .btnEtapas-Btns{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0px;
+    } */
+
+    .btnEtapas-Btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+
+
+    .btnPadraoDois{
+        width: auto;
+        font-size: 12px;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 15px;
+        justify-content: space-between;
+    }
+
+    .carreira-container {
+        flex-direction: column;
+    }
+
+    .carreira-form-wrapper {
+        width: 100%;
+        padding: 50px 20px; /* Ajuste de padding */
+    }
+
+    .formCarreira {
+        width: 100%;
+    }
+
+    .contato-form-wrapper{
+        width: 100%;
+    }
+
+    .carreira-info {
+        padding: 50px 20px;
+    }
+
+    #bannerCarreira {
+        padding: 0;
+    }
+
+    .carreira-info h2 {
+        font-size: 50px;
+    }
+}
+
+/* Responsividade para página de Home */
+@media (max-width: 950px) {
+
+    .bannerEtapas-descricao {
+       padding: 50px 0px 0px 0px
+    }
+
+        #bannerPlanosSaibaMais img {
+        width: 450px;
+    }
+}
+
+@media (max-width: 900px) {
+    .bannerEtapas {
+        flex-direction: column;
+    }
+
+    .bannerEtapas-descricao {
+        flex-direction: column;
+    }
+
+    .bannerEtapas-descricao img {
+        border-radius: 20px;
+    }
+}
+
 
 /* =======================================
    ESTILOS MOBILE (max-width: 768px)
@@ -1378,6 +1469,10 @@ body {
         max-height: 400px; 
     }
 
+    .btnPadraoDois {
+        text-align: left;
+    }
+
     /* --- Banner Marcas --- */
     .bannerMarcas-slider img {
         max-height: 30px; 
@@ -1386,6 +1481,10 @@ body {
     /* --- Banner Etapas --- */
     .bannerEtapas {
         padding: 50px 20px;
+    }
+
+    .bannerEtapas-selector {
+        max-width: 728px;
     }
 
     .bannerEtapas-selector h2 {
@@ -1509,26 +1608,35 @@ body {
     /* --- Carousel Imagens/Soluções --- */
 
     .image-gallery {
-        overflow-x: scroll; 
-        justify-content: flex-start; 
-        gap: 15px;
+        overflow-x: hidden; 
+        display: flex;
+        width: 400%; 
+        gap: 0;      
     }
 
-    .gallery-item {
-        min-width: 80%;
-        flex-shrink: 0; 
-        max-width: 100%;
+   .gallery-item {
+        width: 25%;  
+        min-width: 25%;
+        padding: 0 10px;
     }
     
-    .gallery-item-sobreNos{
-        width: 100px !important;
-        height: 100px !important;
+    .gallery-item-sobreNos {
+        width: 100% !important; 
+        height: auto !important;
+        aspect-ratio: 1/1;
+    }
+
+    .carousel-caption-titulo {
+        font-size: 18px;
+        margin-top: 20px;
+        opacity: 1;
+        padding: 0 10px;
     }
 
     .pagination-bars {
-        display: none;
+        display: flex; 
+        margin-bottom: 20px;
     }
-    
 
     /* --- Banner Fale Com A Nucleo --- */
     .BannerFaleComANucleo {
