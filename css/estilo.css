@@ -2,12 +2,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: inherit;
 }
 
 body {
     margin: 0 !important;
     padding: 0 !important;
+}
+
+html, body {
+    font-family: 'MinhaFonte', Arial, sans-serif;
+}
+
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('/fonts/MonaSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* --- Botões Padrão --- */
